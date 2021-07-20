@@ -2,8 +2,6 @@ Angular 11
 -------------------------------------------------
 https://github.com/avamsykiran/Angular11_19Jul21_09Aug21_14001600.git
 
-
-
 Lab Setup
 ---------------------------------------------------
 
@@ -16,7 +14,7 @@ Lab Setup
                                         node --version
                                         npm --version
 
-    Angular CLI     Project Management  npm install -g @angular/cli
+    Angular CLI     Project Management  npm install -g @angular/cli@11
 
                                         ng --version
 
@@ -88,7 +86,6 @@ What is Angular?
     ....
     angular11
 
-
     typescript = Javascript + datatypes
 
 Angular Features
@@ -155,9 +152,126 @@ Angular Archetecture
                 class MyRootModule {
                 }
 
-    Components
-    Directives
-    Pipes
-    Services
-    Gaurds
-    Interceptors
+    Components      represents user-defined html element.
+
+                    component = controller + template
+
+                    @Component({
+                        selector:'my-hello',
+                        templateUrl:'mycomponent.html'
+                    })
+                    class HelloComponent {
+                        welcoemMsg:string;
+
+                        constructor(){
+                            this.welcoemMsg="Hello World";
+                        }
+                    }
+
+                    mycomponent.html
+                    ---------------------
+                        <h1>{{welcomeMsg}}</h1>
+
+                    <my-hello></my-hello>           <h1>Hello World</h1>
+
+
+    Directives       represents user-defined html attribute.
+                    
+                    @Directive({
+                        selector:'myHighlight'
+                    })
+                    class HighLightDirective {
+                       //code needed to high light the content of the hosting eleemnt
+                    }
+                    
+                    <my-hello myHighlight="purple"></my-hello>   
+
+                    in-built dirctive
+                    ---------------------------
+                        structural directive
+                            ngIf
+                            ngFor
+                            ngSwitch
+                                ngSwitchCase
+                                ngDefault
+                        
+                        event directives
+                            click
+                            dblclick
+                            blur
+                            focus
+                            change
+                            ngSubmit
+
+                        other directives
+                            ngModel
+                            ngForm
+                            formControlName
+                            routerLink
+                            .............etc
+    
+    Pipes          are used to tranform valeus just before they are rendered on the screen.
+
+                        inbuilt pipes
+
+                            lowercase           {{username|lowercase}}
+                            uppercase
+                            number
+                            percent
+                            currency
+                            date
+                            aysnc
+                            json
+
+                    @Pipe({
+                        name:'inwords'
+                    })
+                    class ConvertIntoWordsPipe{
+                        //.......code needed to do the transformation
+                    }
+
+                    {{1234|inwords}}
+
+    Services    are sued to accomidate bussienss logic
+                    like client side validations, computation, rest api calls
+
+                    @Injectable({
+                        providedIn:'root'
+                    })
+                    class MyService{
+                        //bussiness logic
+                    }
+    
+    Gaurds          are special services that are used to safe gourd routes
+    Interceptors    are special services that are used to do repetative tasks
+                    before sending a rest api request or after receving a rest api response.
+
+Angular CLI
+------------------------------------------------------------------------
+
+    is used to manage and work with our porject structure.
+
+    ng new projectName
+
+    cd projectName
+
+    ng serve --port 8787 -o             used to execute the angular app on development server
+
+    ng build                            trnspell and package the angular app into  'dist' folder
+
+    ng g component componentName --skipTests        used to generate a new component without test cases
+    ng g service serviceName --skipTests            used to generate a new service without test cases
+    ng g module moduleName --skipTests              used to generate a new module without test cases
+    ng g pipe pipeName --skipTests                  used to generate a new pipe without test cases
+    ng g directive directiveName --skipTests        used to generate a new directive without test cases
+    ng g guard guardName --skipTests                used to generate a new guard without test cases
+    ng g interceptor interceptorName --skipTests    used to generate a new interceptor without test cases
+    ng g class className --skipTests                used to generate a new class without test cases
+    ng g interface interfaceName                    used to generate a new interface
+
+    ng test                             used to execute all our test cases.
+
+
+
+    
+
