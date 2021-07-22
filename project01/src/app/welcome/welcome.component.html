@@ -1,0 +1,22 @@
+
+<div>
+    <img [src]="logo" (click)="changeImage()" [class]="{rounded:flag1,centered:flag2,bordered:flag3}" />
+</div>
+
+<p [style.fontSize.pt]="fs"> 
+    Hello! <strong>{{userName}}</strong>! Welcome To Our New Angular Project.
+</p>
+
+<div>
+    <label>User name: <input type="text" name="unm" [(ngModel)]="userName" /></label>
+</div>
+<div>
+    <label>Font Size: 
+        <input type="range" min="5" max="70" [(ngModel)]="fs" />
+    </label>
+</div>
+<div>
+    <label><input type="checkbox" [(ngModel)]="flag1" />apply rounded</label>
+    <label><input type="checkbox" [(ngModel)]="flag2" />apply centered</label>
+    <label><input type="checkbox" [(ngModel)]="flag3" />apply bordereded</label>
+</div>

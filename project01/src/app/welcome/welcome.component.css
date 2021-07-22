@@ -1,0 +1,13 @@
+
+.rounded{
+    border-radius: 10%;
+}
+
+.bordered{
+    border: 2px solid #000000;
+}
+
+.centered{
+    display: block;
+    margin:auto;
+}

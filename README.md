@@ -271,7 +271,75 @@ Angular CLI
 
     ng test                             used to execute all our test cases.
 
-
-
+Typescript
+-----------------------------------------------------------
     
+    interface MyInterface{
+        field1:string;
+        field2?:Date;
 
+        method1():void;
+    }
+    
+    class Dummy implements MyInterface{
+        datamember : string;
+
+        constructor(datamember:string,arg1:number,public arg2:number){
+            this.datamember = datamemeber;
+        }
+
+        method1():void{
+            this.datamember="";
+            console.log(this.arg2);
+        }
+    }
+
+ Angular Components
+------------------------------------------------------------------   
+
+    Styles
+        Global Style
+            styles.css
+
+        Component level local style
+
+    Data Binding
+
+        interpolation
+            {{ expression }}
+        
+        one-way data binding
+            [attribute]="varName"
+
+        event binding
+            (event-directive)="funcCall()"
+
+        two way data binding
+            form elements only
+            the value of a variable is loaded on to the form ele initially
+            when ever the foem ekle value chagnes, the var value also gets updated.
+
+            ngModel         FormsModule
+
+            [(ngModel)]="field"
+
+        style binding
+
+            [style.cssProperty]="field"
+
+            [class]="{'class1-name':true,'class2-name':false}"
+
+Angular   Pipes          
+-------------------------------------------------------------
+are used to tranform valeus just before they are rendered on the screen.
+
+                        inbuilt pipes
+
+                            lowercase           {{username|lowercase}}
+                            uppercase
+                            number
+                            percent
+                            currency
+                            date
+                            aysnc
+                            json
