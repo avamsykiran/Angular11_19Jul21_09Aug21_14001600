@@ -261,7 +261,7 @@ Angular CLI
 
     ng g component componentName --skipTests        used to generate a new component without test cases
     ng g service serviceName --skipTests            used to generate a new service without test cases
-    ng g module moduleName --skipTests              used to generate a new module without test cases
+    ng g module moduleName               used to generate a new module without test cases
     ng g pipe pipeName --skipTests                  used to generate a new pipe without test cases
     ng g directive directiveName --skipTests        used to generate a new directive without test cases
     ng g guard guardName --skipTests                used to generate a new guard without test cases
@@ -329,7 +329,7 @@ Typescript
 
             [class]="{'class1-name':true,'class2-name':false}"
 
-Angular   Pipes          
+Angular Pipes          
 -------------------------------------------------------------
 are used to tranform valeus just before they are rendered on the screen.
 

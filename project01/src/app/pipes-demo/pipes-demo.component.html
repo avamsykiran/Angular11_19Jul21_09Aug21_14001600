@@ -1,0 +1,51 @@
+<div>
+    <p>
+        <span>Original: {{strData}}</span> <br />
+        <span>{{strData|lowercase}}</span> <br />
+        <span>{{strData|uppercase}}</span> <br />
+        <span>{{strData|titlecase}}</span> 
+    </p>
+
+    <p>
+        <span>Original: {{numData}}</span> <br />
+        <span>{{numData|number:'10.5-8'}}</span> <br />
+        <span>{{numData|number:'5.0-0'}}</span> <br />
+    </p>
+
+    <p>
+        <span>Original: {{numData}}</span> <br />
+        <span>{{numData|percent}}</span> <br />
+    </p>
+
+    <p>
+        <span>Original: {{numData}}</span> <br />
+        <span>{{numData|currency:'INR'}}</span> <br />
+        <span>{{numData|currency:'USD'}}</span> <br />
+        <span>{{numData|currency:'GBP'}}</span> <br />
+        <span>{{numData|currency:'AUD'}}</span> <br />
+        <span>{{numData|currency:'JPY'}}</span> <br />
+        <span>{{numData|currency:'XYZ'}}</span> <br />
+    </p>
+
+    <p>
+        <span>Original: {{dateData}}</span> <br />
+        <span>{{dateData|date:'short'}}</span> <br />
+        <span>{{dateData|date:'long'}}</span> <br />
+        <span>{{dateData|date:'dd-MM-yyyy'}}</span> <br />
+        <span>{{dateData|date:'dd-MMM-yyyy'}}</span> <br />
+        <span>{{dateData|date:'dd-MMMM-yyyy'}}</span> <br />
+        <span>{{dateData|date:'dd-MM-yyyy hh:mm:ss a'}}</span> <br />
+        <span>{{dateData|date:'dd-MM-yyyy HH:mm:ss'}}</span> <br />
+    </p>
+
+    <p>
+        <span>Original: {{numData}}</span> <br />
+        <span>{{numData|inWords}}</span> <br />
+    </p>
+
+    <p>
+        <span>{{'RAM'|adjust:10}}</span> <br />
+        <span>{{'RAMANUJAN'|adjust:10}}</span> <br />
+        <span>{{'RAMANUJAN IYAR'|adjust:10}}</span> <br />
+    </p>
+</div>
