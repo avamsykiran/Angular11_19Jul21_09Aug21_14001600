@@ -1,1 +1,32 @@
-<p>user-form works!</p>
+<div class="col-sm-8 mx-auto">
+    <h3>New User</h3>
+
+    <form class="form" #f="ngForm">
+        <div class="form-group">
+            <label>User Id</label>
+            <input type="number" name="uid" class="form-control" [(ngModel)]="user.id" required #uid="ngModel" />
+            <div class="alert bg-danger text-info" *ngIf="uid.invalid && (uid.touched || uid.dirty)">
+                <strong *ngIf="uid.errors?.required">User Id is a manditory field</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="unm" class="form-control" [(ngModel)]="user.fullName" required minlength="5"
+                maxlength="45" #unm="ngModel" />
+            <div class="alert bg-danger text-info" *ngIf="unm.invalid && (unm.touched || unm.dirty)">
+                <strong *ngIf="unm.errors?.required">Full Name is a manditory field</strong>
+                <strong *ngIf="unm.errors?.minlength">Full Name is expected to be atleast 5 chars in length</strong>
+                <strong *ngIf="unm.errors?.maxlength">Full Name is expected to be atmost 45 chars in length</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email Id</label>
+            <input type="email" name="eid" class="form-control" [(ngModel)]="user.emailId" required />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="pwd" class="form-control" [(ngModel)]="user.password" required minlength="4" />
+        </div>
+        <button class="btn btn-block btn-primary" [disabled]="f.invalid">SAVE</button>
+    </form>
+</div>

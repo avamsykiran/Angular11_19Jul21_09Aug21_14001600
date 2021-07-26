@@ -343,3 +343,103 @@ are used to tranform valeus just before they are rendered on the screen.
                             date
                             aysnc
                             json
+
+ Angular Routing
+ -------------------------------------------------------------
+
+    RouterModule
+            Routes      Route[]
+                            path            urlSegment
+                            component       ComponentObject
+                            pathMatch       'startWith'|'full'
+                            redirectTo
+                            canActivate
+                            canDeactivate
+                            canLoad
+                            children
+
+            .forRoot(routes)            globally on the entire app
+            .forChild(routes)           local to a given module only
+
+            <router-outlet></router-outlet>
+
+            routerLink              directive to be used as an attrb on 'a' element
+
+            routerActiveLink        holding the name of class that has to be appleid to a link
+                                    that is currently loaded on the page.
+
+ Angular Service
+ -------------------------------------------------------------
+
+        a service is used to hold bussiness logic.
+
+ Angular Dependency Injection
+ -------------------------------------------------------------
+    angular can create objects for all of its resources
+    and supply them to the place where they are needed.
+
+    Root Injector           root module
+        one injector per modules                     providers:[]
+            one injector per component               providers:[]
+            one injector per pipe                    providers:[]
+            one injector per directive ..etc.,       providers:[]
+
+    @Injectable({
+        providedIn:'root'
+    })
+    class MySerive{
+
+    }
+
+ Angular Forms
+ -------------------------------------------------------------      
+
+        Template Driven Forms
+
+                    FormsModule
+                        ngForm
+                        ngModel
+
+                    write as lot on the template side
+                    we will a very less control over the form from the controller side
+                    it is hard to test using any javascript testing library
+
+        Model Driven Forms / Reactive Forms
+
+                    ReactiveFormsModule
+                        FormGroup
+                        FormControl
+
+                        formControlName
+                        formGroup
+
+                    write less on tempalte side and more on the controller side
+                    as a result we have more programtic control on the form and its validations
+                    custome validations are easy to intergrate
+                    the validation can be done asynchronously
+                    easier to test.
+
+        Form Validation Properties 
+        ------------------------------------
+
+            on ngForm and FormGroup
+                        valid           
+                        invalid
+
+            on ngModel  and   FormControl
+                        touched     untouched
+                        dirty       prestine
+                        invalid     valid
+
+                        errors
+                        errors.required
+                        errors.min
+                        errors.max
+                        errors.pattern
+                        errors.minlength
+                        errors.maxlength
+                        errors.email
+                        ...etc
+
+
+
