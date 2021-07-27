@@ -1,7 +1,7 @@
 <div class="col-sm-8 mx-auto">
     <h3>New User</h3>
 
-    <form class="form" #f="ngForm">
+    <form class="form" #f="ngForm" (ngSubmit)="addUser()">
         <div class="form-group">
             <label>User Id</label>
             <input type="number" name="uid" class="form-control" [(ngModel)]="user.id" required #uid="ngModel" />
@@ -21,11 +21,21 @@
         </div>
         <div class="form-group">
             <label>Email Id</label>
-            <input type="email" name="eid" class="form-control" [(ngModel)]="user.emailId" required />
+            <input type="email" name="eid" class="form-control" 
+            #eid="ngModel" [(ngModel)]="user.emailId" required />
+            <div class="alert bg-danger text-info" *ngIf="eid.invalid && (eid.touched || eid.dirty)">
+                <strong *ngIf="eid.errors?.required">Email Id is a manditory field</strong>
+                <strong *ngIf="eid.errors?.email">A valid emial id expected</strong>
+            </div>
         </div>
         <div class="form-group">
             <label>Password</label>
-            <input type="password" name="pwd" class="form-control" [(ngModel)]="user.password" required minlength="4" />
+            <input type="password" name="pwd" #pwd="ngModel"
+            class="form-control" [(ngModel)]="user.password" required minlength="4" />
+            <div class="alert bg-danger text-info" *ngIf="pwd.invalid && (pwd.touched || pwd.dirty)">
+                <strong *ngIf="pwd.errors?.required">Password is a manditory field</strong>
+                <strong *ngIf="pwd.errors?.minlength">Password is expected to be atleast 4 chars in length</strong>
+            </div>
         </div>
         <button class="btn btn-block btn-primary" [disabled]="f.invalid">SAVE</button>
     </form>

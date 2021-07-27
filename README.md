@@ -368,6 +368,10 @@ are used to tranform valeus just before they are rendered on the screen.
             routerActiveLink        holding the name of class that has to be appleid to a link
                                     that is currently loaded on the page.
 
+            Router                  is a service used to navigate programatically,
+                                    .navigateByUrl("url")
+                                    .navigate("path",{queryParams:{}...etc})
+
  Angular Service
  -------------------------------------------------------------
 
@@ -441,5 +445,18 @@ are used to tranform valeus just before they are rendered on the screen.
                         errors.email
                         ...etc
 
+ Angular Components With Attributes,Events and Passable Content.
+ -----------------------------------------------------------------    
+
+    Passable Content
+        <ng-content></ng-content>
+
+    Component Attriubtes
+        @Input()
+
+    Emiting Events
+        EventEmiter        
+        @Output()
+        
 
 
