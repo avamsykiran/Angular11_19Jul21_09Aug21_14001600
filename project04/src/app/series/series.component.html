@@ -1,0 +1,16 @@
+<section class="border border-primary m-3 p-3">
+    <form class="form-inline mb-1">
+        <label class="mr-1">Lower Bound:<input type="number" name="n1" [(ngModel)]="lb" /></label>
+        <label class="mr-1">Upper Bound:<input type="number" name="n2" [(ngModel)]="ub" /></label>
+        <label class="mr-1"><input type="checkbox" name="c1" [(ngModel)]="doEvens" />Evens </label>
+        <label class="mr-1"><input type="checkbox" name="c2" [(ngModel)]="doSquares" />Squares </label>
+        <button class="btn btn-sm btn-primary" (click)="start()" [disabled]="isInProgress">START</button>
+    </form>
+
+    <div *ngIf="nums && nums.length>0" class="row p-2">
+        <div class="col-xs-1 mr-1" *ngFor="let n of nums">{{n}}</div>
+    </div>
+
+    <p *ngIf="err"><strong>{{err}}</strong></p>
+
+</section>

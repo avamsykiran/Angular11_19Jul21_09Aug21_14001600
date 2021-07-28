@@ -459,4 +459,52 @@ are used to tranform valeus just before they are rendered on the screen.
         @Output()
         
 
+RxJS
+-------------------------------------------------------------------
 
+    is a reactive javascript library.
+
+        let job = (resolve,reject) => {
+            //executed sucessfully we call 
+            resolve(resultantData);
+
+            //an error is encoutnred and the job did not eomplte.
+            //then we call
+            reject(err);
+        }
+
+        let p = new Promise(job);
+
+        p.then(
+            (resultantData) => {}, //on successful completion
+            (err) => {} //when Error occurs
+        );
+
+        ----------------------------------------------------------------
+
+        let job = (observer) => {
+
+            observer.next(resultantData);
+
+            observer.complete();
+
+            observer.error(err);
+        }
+
+        let ob = new Observable(job);
+
+        ob.subscribe(
+            (resultantData) => {}, //onNext
+            (err) => {}, //onError
+            ()=>{} //onComplete
+        )
+
+        rxjs Operators
+        ----------------------------------------------
+
+            map
+            filter
+            merge
+            joinFork
+            catchError
+                ...etc
