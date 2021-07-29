@@ -1,0 +1,8 @@
+{
+    "users":[
+        {"id":1,"fullName":"Vamsy Kiran Aripaka","password":"","emailId":"vamsy.kiran@iiht.com"},
+        {"id":2,"fullName":"Suseela Aripaka","password":"","emailId":"a.suseela.it@gmail.com"},
+        {"id":3,"fullName":"Indhikaa Aripaka","password":"","emailId":"indhikaa@gmail.com"}
+    ],
+    "transactions":[]
+}

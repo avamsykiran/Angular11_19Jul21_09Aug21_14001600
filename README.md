@@ -508,3 +508,39 @@ RxJS
             joinFork
             catchError
                 ...etc
+
+Angular LifeCycle & Hooks
+----------------------------------------------------------------------------------
+
+        constructor
+        ngOnChanges                      when the data-bound property variations happen (form control gets renewed )
+        ngOnInit                         When Angular has completed the creation and introduction of components
+        ngDoCheck                        whenever there is a vitality to review the input property of a component 
+                ngAfterContentInit       when every content of the components gets introduced and checked for 
+                                          the first time
+                ngAfterContentChecked   
+                ngAfterViewInit
+                ngAfterViewChecked
+        ngOnDestroy
+
+Json-Server
+------------------------------------------------------------------------------------
+
+    is a fake rest api generating server, javascript library
+
+    this library can be used to create fake rest api end point on a givne .json file.
+
+    npm install json-server --save
+
+    json-server --watch file.json --port 9090
+
+HttpClient
+------------------------------------------------------------------------------------
+
+    HttpClientModule
+
+        HttpClient
+                    get(url)  :Observable
+                    put(url,reqBody) :Observable
+                    post(url,reqBody) :Observable
+                    delete(url) :Observable

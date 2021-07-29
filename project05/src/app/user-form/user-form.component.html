@@ -1,0 +1,39 @@
+<div class="col-sm-8 mx-auto">
+    <h3>New User</h3>
+
+    <form class="form" [formGroup]="userForm" (ngSubmit)="addUser()">
+        <div class="form-group">
+            <label>User Id</label>
+            <input type="number" class="form-control" formControlName="id" />
+            <div class="alert bg-danger text-info" *ngIf="uidFC.invalid && (uidFC.touched || uidFC.dirty)">
+                <strong *ngIf="uidFC.errors?.required">User Id is a manditory field</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" formControlName="fullName"/>
+            <div class="alert bg-danger text-info" *ngIf="unmFC.invalid && (unmFC.touched || unmFC.dirty)">
+                <strong *ngIf="unmFC.errors?.required">Full Name is a manditory field</strong>
+                <strong *ngIf="unmFC.errors?.minlength">Full Name is expected to be atleast 5 chars in length</strong>
+                <strong *ngIf="unmFC.errors?.maxlength">Full Name is expected to be atmost 45 chars in length</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email Id</label>
+            <input type="email" class="form-control" formControlName="emailId" />
+            <div class="alert bg-danger text-info" *ngIf="eidFC.invalid && (eidFC.touched || eidFC.dirty)">
+                <strong *ngIf="eidFC.errors?.required">Email Id is a manditory field</strong>
+                <strong *ngIf="eidFC.errors?.email">A valid emial id expected</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" />
+            <div class="alert bg-danger text-info" *ngIf="pwdFC.invalid && (pwdFC.touched || pwdFC.dirty)">
+                <strong *ngIf="pwdFC.errors?.required">Password is a manditory field</strong>
+                <strong *ngIf="pwdFC.errors?.minlength">Password is expected to be atleast 4 chars in length</strong>
+            </div>
+        </div>
+        <button class="btn btn-block btn-primary" [disabled]="userForm.invalid">SAVE</button>
+    </form>
+</div>
