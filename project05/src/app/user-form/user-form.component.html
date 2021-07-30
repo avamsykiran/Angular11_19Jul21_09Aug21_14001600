@@ -1,10 +1,10 @@
 <div class="col-sm-8 mx-auto">
-    <h3>New User</h3>
+    <h3>{{isEdit?"Edit":"New"}} User</h3>
 
     <form class="form" [formGroup]="userForm" (ngSubmit)="addUser()">
         <div class="form-group">
             <label>User Id</label>
-            <input type="number" class="form-control" formControlName="id" />
+            <input type="number" class="form-control" formControlName="id" [readonly]="isEdit"/>
             <div class="alert bg-danger text-info" *ngIf="uidFC.invalid && (uidFC.touched || uidFC.dirty)">
                 <strong *ngIf="uidFC.errors?.required">User Id is a manditory field</strong>
             </div>

@@ -344,6 +344,7 @@ are used to tranform valeus just before they are rendered on the screen.
                             aysnc
                             json
 
+
  Angular Routing
  -------------------------------------------------------------
 
@@ -371,6 +372,12 @@ are used to tranform valeus just before they are rendered on the screen.
             Router                  is a service used to navigate programatically,
                                     .navigateByUrl("url")
                                     .navigate("path",{queryParams:{}...etc})
+
+            ActivatedRoute          is a service used to retrive information
+                                    about current route like
+                                        current path
+                                        query strings
+                                        path params ...etc
 
  Angular Service
  -------------------------------------------------------------

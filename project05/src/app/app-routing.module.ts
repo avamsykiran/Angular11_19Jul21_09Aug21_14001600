@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'dash',component:DashboardComponent},
   {path:'list',component:UsersListComponent},
   {path:'add',component:UserFormComponent},
+  {path:'edit/:id',component:UserFormComponent},
   {path:'details',component:UserDetailsComponent},
   {path:'',pathMatch:'full',redirectTo:'/dash'}
 ];
