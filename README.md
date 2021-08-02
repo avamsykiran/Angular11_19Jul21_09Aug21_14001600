@@ -551,3 +551,97 @@ HttpClient
                     put(url,reqBody) :Observable
                     post(url,reqBody) :Observable
                     delete(url) :Observable
+
+Modularization
+--------------------------------------------------------------------------------
+Domain: A domain NgModule is organized around a feature, business domain, or user experience.
+Routed: The top component of the NgModule acts as the destination of a router navigation route.
+Routing: A routing NgModule provides the routing configuration for another NgModule.
+Service: A service NgModule provides utility services such as data access and messaging.
+Widget: A widget NgModule makes a component, directive, or pipe available to other NgModules.
+Shared: A shared NgModule makes a set of components, directives, and pipes available to other NgModules.
+
+        NgModule	Declarations	Providers	    Exports	        Imported by
+        ------------------------------------------------------------------------------
+        Domain	        Yes	        Rare	        Top component	Another domain, AppModule
+        Routed	        Yes	        Rare	        No	            None
+        Routing	        No	        Yes (Guards)	RouterModule	Another domain (for routing)
+        Service	        No	        Yes	            No	            AppModule
+        Widget	        Yes	        Rare	        Yes	            Another domain
+        Shared	        Yes	        No	            Yes	            Another domain
+
+ng g module Shared
+ng g module Widgets
+ng g module Services --module app.module
+
+lazy loading a domain module
+-------------------------------------------------------------
+ng g module EntityDoamin --route entity --module app.module
+
+Router Guards
+----------------------------------------------------------------------------------
+
+is used to protect a route from being accessed
+only when it is allowed to access.
+
+Angular provides four types of RouterGuards (interfaces)
+
+    CanActivate            control if a route can be entered or not
+    CanDeactivate          control if a route can be left or not
+    CanLoad                controls if a lazy loaded route should be laoded or not
+    CanChildActivate       control if child-routes can be entered or not
+
+Angular Testing
+---------------------------------------------------------------------------------
+
+    jasmine     is an independent javascript testing library.
+
+
+                describe    -------------> writes test suits (are a collection of test cases)
+                beforeEach  -------------> that executes a common task before executing each test case
+                afterEach   -------------> that executes a common task after  executing each test case
+                it          -------------> which indicate one test case.
+
+                expect      -------------> creates an assertiopn object which
+                                            reports test being passed or failed.
+
+                                            the assertion object has matcher functions
+
+                                            toBe(object)
+                                            toBeSame(Object)
+                                            toBeTrue()
+                                            toBeFalse()
+                                            toBeTruthy()
+                                            toBeFalsy()
+                                            toBeNull()
+                                            toBeNotNull()
+                                            toBeUndefined()
+                                            toBeGreaterThan(value) ......etc
+
+                describe("test suit description",()=>{
+
+                    beforeEach(()=>{
+                        //write a job that has to execute commonly
+                        //before executing each test case
+                    })
+
+                    afterEach(()=>{
+                        //write a job that has to execute commonly
+                        //after executing each test case
+                    })
+
+                    it("test case descriotion",()=>{
+                        //the actual test case.....
+                    })
+                });
+
+
+
+    karma       is a testing framework/platform for angular, developed by the
+                same tema that developed angular.
+
+                npm test    ----------->  ng test -------> trigger karma and then
+                                                        karma executes the .spec.ts files 
+                                                        contianing jasmine test cases 
+                                                        and then karma reports the test results
+                                                        on the browser (chrome).
