@@ -1,1 +1,14 @@
-<p>login works!</p>
+<div class="bg-primary p-4">
+    <h3>Sign In</h3>
+    <form #f="ngForm" class="form">
+        <div class="form-group">
+            <label>Email Id</label>
+            <input type="email" name="eid" [(ngModel)]="email" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="pwd" [(ngModel)]="password" required class="form-control" />
+        </div>
+        <button class="btn btn-secondary btn-block" [disabled]="f.invalid">Sign In</button>
+    </form>
+</div>
