@@ -1,0 +1,11 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+    <a routerLink="/" *ngIf="brand" class="navbar-brand">{{brand}}</a>
+
+    <ul class="navbar-nav" *ngIf="links">
+        <li class="nav-item" *ngFor="let link of links">
+            <a [routerLink]="link[0]" class="nav-link">
+                {{link[1]}}
+            </a>
+        </li>
+    </ul>
+</nav>

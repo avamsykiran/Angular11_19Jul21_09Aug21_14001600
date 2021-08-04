@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class UserComponent implements OnInit {
 
   title:string;
+  links?:string[][];
 
   constructor() { 
     this.title=environment.title;

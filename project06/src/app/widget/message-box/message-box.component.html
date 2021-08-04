@@ -1,1 +1,4 @@
-<p>message-box works!</p>
+<div [class]="{'alert':true,'alert-danger':(type==='ERROR'),'alert-info':(type!=='ERROR')}" *ngIf="!isClosed">
+    <span><strong>{{message}}</strong></span>
+    <button class="btn btn-sm btn-secondary pull-right ml-2" (click)="close()">CLOSE</button>
+</div>

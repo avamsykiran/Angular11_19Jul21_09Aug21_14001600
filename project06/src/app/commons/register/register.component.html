@@ -1,6 +1,10 @@
 <div class="bg-secondary p-4">
     <h3>Sign Up</h3>
-    <form [formGroup]="regForm" class="form">
+
+    <app-message-box [message]="msg" type="INFO"></app-message-box>
+    <app-message-box [message]="errMsg" type="ERROR"></app-message-box>
+
+    <form [formGroup]="regForm" class="form" (ngSubmit)="register()">
         <div class="form-group">
             <label>Full Name</label>
             <input type="text" formControlName="fullName" required class="form-control" />

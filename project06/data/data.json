@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Administrator",
+      "email": "admin@d2h.com",
+      "password": "admin",
+      "role": "ADMIN"
+    },
+    {
+      "fullName": "Vamsy Kiran",
+      "email": "vamsy.kiran@iiht.com",
+      "password": "vamsy",
+      "role": "USER",
+      "id": 2
+    },
+    {
+      "fullName": "Indhikaa VAlli",
+      "email": "indhikaa@gmail.com",
+      "password": "indhikaa",
+      "role": "USER",
+      "id": 3
+    },
+    {
+      "fullName": "Suseela Aripaka",
+      "email": "suseela@gmail.com",
+      "password": "suseela",
+      "role": "USER",
+      "id": 4
+    }
+  ],
+  "txns": []
+}

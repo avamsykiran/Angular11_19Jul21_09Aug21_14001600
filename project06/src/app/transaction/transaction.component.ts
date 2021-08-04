@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionComponent implements OnInit {
 
+  title?:string;
+  links?:string[][];
+  
   constructor() { }
 
   ngOnInit(): void {
