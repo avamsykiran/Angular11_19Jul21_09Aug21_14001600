@@ -1,10 +1,15 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <a routerLink="/" *ngIf="brand" class="navbar-brand">{{brand}}</a>
 
-    <ul class="navbar-nav" *ngIf="links">
+    <ul class="navbar-nav" >
         <li class="nav-item" *ngFor="let link of links">
             <a [routerLink]="link[0]" class="nav-link">
                 {{link[1]}}
+            </a>
+        </li>
+        <li class="nav-item" *ngIf="showLogout">
+            <a [routerLink]="" (click)="logout()" class="nav-link">
+                Sign Out
             </a>
         </li>
     </ul>

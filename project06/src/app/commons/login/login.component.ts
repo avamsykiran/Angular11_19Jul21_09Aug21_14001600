@@ -9,16 +9,27 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  email?:string;
-  password?:string;
-
-  constructor(private userService:UserService,private router:Router) { }
+  email:string;
+  password:string;
+  errMsg?:string;
+  constructor(private userService:UserService,private router:Router) { 
+    this.email="";
+    this.password="";
+  }
 
   ngOnInit(): void {
   }
 
   login(){
-    //login code goes here....
+   this.userService.login(this.email,this.password).subscribe(
+    user => {
+      if(user.role==="ADMIN")
+        this.router.navigateByUrl("/user");
+      else
+        this.router.navigateByUrl("/txn");
+    },
+    err => this.errMsg="Access Denied"
+   );
   }
 
 }

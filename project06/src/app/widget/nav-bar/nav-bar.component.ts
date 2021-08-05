@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,EventEmitter, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,6 +14,17 @@ export class NavBarComponent {
   @Input()
   links?:string[][];
 
-  constructor() { }
+  @Input()
+  showLogout?:boolean;
 
+  @Output()
+  logoutClicked:EventEmitter<void>;
+
+  constructor() { 
+    this.logoutClicked=new EventEmitter<void>();
+  }
+
+  logout(){
+    this.logoutClicked.emit();
+  }
 }

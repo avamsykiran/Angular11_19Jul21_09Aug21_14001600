@@ -1,6 +1,7 @@
 <div class="bg-primary p-4">
     <h3>Sign In</h3>
-    <form #f="ngForm" class="form">
+    <app-message-box [message]="errMsg" type="ERROR"></app-message-box>
+    <form #f="ngForm" class="form" (ngSubmit)="login()">
         <div class="form-group">
             <label>Email Id</label>
             <input type="email" name="eid" [(ngModel)]="email" required class="form-control" />

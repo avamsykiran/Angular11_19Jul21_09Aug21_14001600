@@ -1,4 +1,27 @@
-<app-nav-bar [brand]="title" [links]="links"></app-nav-bar>
+<app-nav-bar [brand]="title" [links]="links" [showLogout]="true" (logoutClicked)="logout()"></app-nav-bar>
 <main class="container-fluid">
-    
+    <div class="col-sm-9 mx-auto p-5">
+        <h4>Users List</h4>
+
+        <app-message-box [message]="errMsg" type="ERROR"></app-message-box>
+
+        <table class="table table-border table-striped" *ngIf="users && users.length>0">
+            <thead>
+                <tr>
+                    <th>User#</th>
+                    <th>Full Name</th>
+                    <th>Email Id</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of users">
+                    <td>{{u.id}}</td>
+                    <td>{{u.fullName}}</td>
+                    <td>{{u.email}}</td>
+                    <td>{{u.role}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </main>
