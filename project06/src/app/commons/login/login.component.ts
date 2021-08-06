@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       else
         this.router.navigateByUrl("/txn");
     },
-    err => this.errMsg="Access Denied"
+    err =>this.errMsg="Access Denied"
    );
   }
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FileDetector } from 'protractor';
 import { UserService } from 'src/app/service/user.service';
 import { User } from 'src/app/shared/user';
 

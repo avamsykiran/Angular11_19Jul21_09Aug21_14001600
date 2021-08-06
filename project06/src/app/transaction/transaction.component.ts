@@ -15,6 +15,10 @@ export class TransactionComponent implements OnInit {
   
   constructor(private userService:UserService,private router:Router) {
     this.title=environment.title;
+    this.links=[
+      ["list","Trasnactions List"],
+      ["add","New Transaction"]
+    ];
   }
 
   ngOnInit(): void {

@@ -1,0 +1,23 @@
+<h3>Transactions</h3>
+
+<div class="alert alert-danger m-3 p-3" *ngIf="errMsg">{{errMsg}}</div>
+<div class="alert alert-info m-3 p-3" *ngIf="msg">{{msg}}</div>
+
+<table *ngIf="txns" class="table table-border table-hover">
+    <thead>
+        <th>Txn#</th>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Income</th>
+        <th>Expendeture</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of txns">
+            <td>{{t.id}}</td>
+            <td>{{t.dot|date:'short'}}</td>
+            <td>{{t.title}}</td>
+            <td>{{t.type==='INCOME'?t.amount:' '}}</td>
+            <td>{{t.type==='EXPENSE'?t.amount:' '}}</td>
+        </tr>
+    </tbody>
+</table>
