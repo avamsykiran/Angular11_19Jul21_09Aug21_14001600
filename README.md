@@ -596,13 +596,12 @@ Angular Testing
 
     jasmine     is an independent javascript testing library.
 
-
                 describe    -------------> writes test suits (are a collection of test cases)
                 beforeEach  -------------> that executes a common task before executing each test case
                 afterEach   -------------> that executes a common task after  executing each test case
                 it          -------------> which indicate one test case.
 
-                expect      -------------> creates an assertiopn object which
+                expect      -------------> creates an assertion object which
                                             reports test being passed or failed.
 
                                             the assertion object has matcher functions
@@ -634,8 +633,6 @@ Angular Testing
                         //the actual test case.....
                     })
                 });
-
-
 
     karma       is a testing framework/platform for angular, developed by the
                 same tema that developed angular.
